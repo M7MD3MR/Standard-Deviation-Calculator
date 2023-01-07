@@ -1,4 +1,7 @@
+# Made by Mohammed Omar Al-Aidaroos and supervised by Mr. Mohammed Marhomy for the math project of grade 11.
+
 import math
+
 
 def variance(data):
 
@@ -6,24 +9,30 @@ def variance(data):
 
     mean = sum(data) / n
 
-    deviations = [(x - mean) ** 2 for x in data]
+    deviations = [(x - mean)**2 for x in data]
 
     variance = sum(deviations) / n
 
     return variance
+
 
 def stdev(data):
 
     var = variance(data)
 
     std_dev = math.sqrt(var)
-    
+
     return std_dev
 
-listnums = [1, 2, 3, 4, 5, 6] # You can change the numbers between the "[]"
 
-var = variance(listnums)
-std = stdev(listnums)
+listnums = [1, 2]  # You can change the numbers between the "[]"
 
-print("variance = ", var)
-print("Standard Deviation = ", std)
+result = len(listnums)
+if result <= 1:
+    print("Please add more numbers to your list.")
+
+else:
+    var = variance(listnums)
+    std = stdev(listnums)
+    print("variance = ", var)
+    print("Standard Deviation = ", std)
